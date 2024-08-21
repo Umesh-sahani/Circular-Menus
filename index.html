@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ul class="menu">
+        <div class="toggle"><ion-icon name="add-outline"></ion-icon></div>
+
+        <li style="--i:0;"><a href="javascript:void(0)"><ion-icon name="home-outline"></ion-icon></a></li>
+        <li style="--i:1;"><a href="javascript:void(0)"><ion-icon name="person-outline"></ion-icon></a></li>
+        <li style="--i:2;"><a href="javascript:void(0)"><ion-icon name="mail-outline"></ion-icon></a></li>
+        <li style="--i:3;"><a href="javascript:void(0)"><ion-icon name="settings-outline"></ion-icon></a></li>
+        <li style="--i:4;"><a href="javascript:void(0)"><ion-icon name="camera-outline"></ion-icon></a></li>
+        <li style="--i:5;"><a href="javascript:void(0)"><ion-icon name="videocam-outline"></ion-icon></a></li>
+        <li style="--i:6;"><a href="javascript:void(0)"><ion-icon name="key-outline"></ion-icon></a></li>
+        <li style="--i:7;"><a href="javascript:void(0)"><ion-icon name="key-outline"></ion-icon></a></li>
+    </ul>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let menuToggle = document.querySelector('.toggle');
+        let menu = document.querySelector('.menu');
+        let list = document.querySelectorAll('li');
+
+
+        menuToggle.onclick = () => {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+
+        list.forEach(item => item.addEventListener('click', function () {
+            list.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        }));
+
+    </script>
+</body>
+
+</html>
